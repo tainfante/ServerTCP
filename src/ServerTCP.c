@@ -146,7 +146,6 @@ char **str_split(char *a_str, const char a_delim) {
     delim[0] = a_delim;
     delim[1] = 0;
 
-    /* Count how many elements will be extracted. */
     while (*tmp) {
         if (a_delim == *tmp) {
             count++;
@@ -155,11 +154,8 @@ char **str_split(char *a_str, const char a_delim) {
         tmp++;
     }
 
-    /* Add space for trailing token. */
     count += last_comma < (a_str + strlen(a_str) - 1);
 
-    /* Add space for terminating null string so caller
-       knows where the list of returned strings ends. */
     count++;
 
     result = malloc(sizeof(char *) * count);
@@ -247,8 +243,6 @@ char *splitListAgain(struct number *el) {
     return output;
 }
 
-
-/* Function to print nodes in a given linked list */
 void printList(struct number *start) {
     struct number *temp = start;
     printf("\nList of the elements:\n");
@@ -311,7 +305,6 @@ void sortup(struct number *el) {
     struct number *ptr1;
     struct number *lptr = NULL;
 
-    /* Checking for empty list */
     if (ptr1 == NULL)
         return;
 
@@ -332,8 +325,6 @@ void sortup(struct number *el) {
 
 }
 
-
-/* function to swap goodThing of two element a and b*/
 void swap(struct number *a, struct number *b) {
     double temp = a->currentnumber;
     a->currentnumber = b->currentnumber;
